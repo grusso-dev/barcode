@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <br>pharmacode <br>
+  <svg id="barcode"></svg>
+  <br>OPC<br>
+  <svg class="barcode2"
+  jsbarcode-format="upc"
+  jsbarcode-value="123456789012"
+  jsbarcode-textmargin="0"
+  jsbarcode-fontoptions="bold"></svg>
+  <br>Texto<br>
+  <svg id="barcode3"></svg>
+  <br>Codabar<br>
+  <svg id="barcode4"></svg>
+
+  <script src="js/JsBarcode.all.min.js"></script>
+  <script>
+    JsBarcode("#barcode", "1234", {
+      format: "pharmacode",
+      lineColor: "#0aa",
+      width: 4,
+      height: 40,
+      fontoptions: "bold"
+    });
+    JsBarcode(".barcode2").init();
+
+    JsBarcode("#barcode3", "A2699Z");
+
+    JsBarcode("#barcode4", "116554478", {
+      format: "codabar",
+      lineColor: "#000",
+      width: 3,
+      height: 30,
+      fontoptions: "bold"
+    });
+    
+  </script>
+</body>
+
+</html>
